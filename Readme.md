@@ -1,4 +1,4 @@
-Compare different Machine Learning Algorithms fo MNIST hand-writing Digits Dataset
+# Compare different Machine Learning Algorithms fo MNIST hand-writing Digits Dataset
 
 One approach to tackle MNIST classification is through HOG descriptor.
 
@@ -19,6 +19,7 @@ The table below shows the accuracy of each Machine Learning algorithm in this li
 -Random Forest - a set of decision trees split for better prediction
 
 And many different configurations of HOG descriptor with following parameters:
+
 -Orientations
 -Pixels Per Cell
 -Cells Per Block
