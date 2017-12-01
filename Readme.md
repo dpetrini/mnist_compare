@@ -1,5 +1,5 @@
 # Compare descriptors and Machine Learning Algorithms
-Compare different HOG descriptor parameters and ML approaches.
+Compare different HOG descriptor parameters and ML approaches for image classification.
 
 The python script __eval_train_classify.py__ perform following tasks:
  * read all dataset, split in train and test 
@@ -9,7 +9,7 @@ The python script __eval_train_classify.py__ perform following tasks:
  * create a table with all results
 
 The objective is to use the table to decide the best algorithm and HOG parameters to use for solve your problem.
-Here the image dataser is MNIST, the hand-writing Digits Dataset. You can use any image dataset with few modifications.
+Here the image dataset is MNIST, the hand-writing Digits Dataset. You can use any image dataset with few modifications.
 
 ## MNIST Dataset
 MNIST is a widely used dataset for computer vision. It has tenths of thousands of labeled digits in gray images of 28x28 pixels size.
@@ -57,11 +57,12 @@ train an actual model for its system and then predict.
 * sklearn
 
 ## Usage
+Main script: evaluate by training and classifying at same time. Generates a report. It may take a while...
 ```
 python3 eval_train_classify.py --dataset data/train.csv
 ```
 
-After you selected your parameters, algorithm based in results of evaluation, you can train your dataset:
+After you selected your parameter and algorithm based in results of evaluation, you can train your dataset:
 ```
 python3 train.py --dataset data/train.csv --model models/rf.cpickle
 ```
@@ -92,7 +93,7 @@ Feature: HOG
 |      SVM      |       2       |    (2, 2)     |    (4, 4)     |    0.8322     |    407.08     |
 |      DTC      |       2       |    (2, 2)     |    (4, 4)     |    0.8180     |    416.41     |
 | Random Forest |       2       |    (2, 2)     |    (4, 4)     |    0.9520     |    340.62     |
-... (lines ommited for brevity)
+... (lines ommited for brevity, etc, etc)
 | Random Forest |       6       |    (4, 4)     |    (3, 3)     |    0.9683     |     95.93     |
 |      SVM      |       6       |    (4, 4)     |    (4, 4)     |    0.8986     |     63.41     |
 |      DTC      |       6       |    (4, 4)     |    (4, 4)     |    0.8573     |     99.39     |
@@ -137,7 +138,7 @@ Summary totalPass each: 	90 (many lines ommited in above table for brevity, see 
 |      DTC      | 0.8752|
 | Random Forest | 0.9707|
 
-### Conclusion
+## Conclusion
 
 The time measurement is just a reference, will be different in other machines.
 
