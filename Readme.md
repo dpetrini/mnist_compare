@@ -1,6 +1,16 @@
 # Compare descriptors and Machine Learning Algorithms for MNIST
 Compare different descriptor parameter and ML approaches for MNIST, the hand-writing Digits Dataset
 
+The python script eval_train_classify.py perform following tasks:
+ * read all dataset, split in train and test 
+ * create HOG descritors for all train dataset for a variation of HOG parameters
+ * select different machine learning algorithm like SVM, random forest
+ * classify immediately the split testset and get accuracy of model
+ * create a table with all results
+
+The objective is to use the table to decide the best algorithm and HOG parameters to use for solve your problem.
+Here the image dataser is MNIST. You can use any image dataset with few modifications.
+
 ## MNIST Dataset
 MNIST is a widely used dataset for computer vision. It has tenths of thousands of labeled digits in gray images of 28x28 pixels size.
 Moreover there is a test set, it means a also large set of unlabeled images (in Kaggle) so that one can test its model.
@@ -337,15 +347,21 @@ Feature: HOG
 | Random Forest |      24       |    (4, 4)     |    (5, 5)     |    0.9618     |     80.01     |
  _______________________________________________________________________________________________
 Summary totalPass each: 	90
-_______AVG Score________
-[      SVM      ]:  0.85 
-[      DTC      ]:  0.82 
-[ Random Forest ]:  0.95 
-_______AVG Time_________
-[      SVM      ]: 281.85
-[      DTC      ]: 332.58
-[ Random Forest ]: 219.89
-_______Max Score________
-[      SVM      ]: 0.9333
-[      DTC      ]: 0.8752
-[ Random Forest ]: 0.9707
+
+|______AVG Score________|
+|---------------|-------|
+|      SVM      |  0.85 |
+|      DTC      |  0.82 |
+| Random Forest |  0.95 |
+
+|_______AVG Time________|
+|---------------|-------|
+|      SVM      | 281.85|
+|      DTC      | 332.58|
+| Random Forest | 219.89|
+
+|______Max Score________|
+|---------------|-------|
+|      SVM      | 0.9333|
+|      DTC      | 0.8752|
+| Random Forest | 0.9707|
