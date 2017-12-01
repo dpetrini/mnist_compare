@@ -29,9 +29,10 @@ data = []
 hog = HOG(orientations = 3, pixelsPerCell = (2, 2),
 	cellsPerBlock = (4, 4), block_norm = 'L2-Hys')
 
-
 # loop over the images
 for image in digits:
+
+	# pre-process image here if needed
 
 	# describe the image and update the data matrix
 	hist = hog.describe(image)

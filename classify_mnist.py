@@ -18,6 +18,7 @@ ap.add_argument("-t", "--test", required = True,
 	help = "path to the image file")
 args = vars(ap.parse_args())
 
+# redirect the outputs to a file
 sys.stdout=open("mnist_classify_output-003.txt","w")
 
 # load the dataset and initialize the data matrix
@@ -39,6 +40,8 @@ data = []
 
 # Prepare images and calculates features (HOG)
 for image in digits_test:
+
+	# pre-process image here if needed
 
 	# describe the image and update the data matrix
 	hist = hog.describe(image)			
