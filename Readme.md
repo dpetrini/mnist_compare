@@ -15,10 +15,11 @@ Here the image dataser is MNIST, the hand-writing Digits Dataset. You can use an
 MNIST is a widely used dataset for computer vision. It has tenths of thousands of labeled digits in gray images of 28x28 pixels size.
 Moreover there is a test set, it means a also large set of unlabeled images (in Kaggle) so that one can test its model.
 The dataset used in this repository is from https://www.kaggle.com/c/digit-recognizer/data.
+(download the files train.csv and test.csv and place in data/ directory)
 
 Example of MNIST digit:
 
-<img src="example/digit.png" width="200">
+<img src="example/digit.jpg" width="200">
 
 ## Image Classification 
 One approach to perform MNIST classification is through HOG descriptors.
@@ -116,7 +117,7 @@ Feature: HOG
 |      DTC      |      24       |    (4, 4)     |    (5, 5)     |    0.8283     |    163.17     |
 | Random Forest |      24       |    (4, 4)     |    (5, 5)     |    0.9618     |     80.01     |
  _______________________________________________________________________________________________
-Summary totalPass each: 	90 (many lines ommited in above table for brevity, see file: output.txt for complete result)
+Summary totalPass each: 	90 (many lines ommited in above table for brevity, see file: eval_output.txt for complete result)
 
 |__AVG Score__  |       |
 |---------------|-------|
