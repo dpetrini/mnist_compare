@@ -1,6 +1,7 @@
 # sklearn skimage
 from skimage import feature
 
+# Histogram of Oriented Gradients
 class HOG:
 	def __init__(self, orientations = 9, pixelsPerCell = (9, 9),
 		cellsPerBlock = (3, 3), block_norm = 'L2-Hys'):  

@@ -1,12 +1,19 @@
-# Compare different Machine Learning Algorithms fo MNIST hand-writing Digits Dataset
+# Compare descriptors and Machine Learning Algorithms for MNIST
+Compare different descriptor parameter and ML approaches for MNIST, the hand-writing Digits Dataset
 
-One approach to tackle MNIST classification is through HOG descriptor.
+## MNIST Dataset
+MNIST is a widely used dataset for computer vision. It has tenths of thousands of labeled digits in gray images of 28x28 pixels size.
+Moreover there is a test set, it means a also large set of unlabeled images (in Kaggle) so that one can test its model.
+The dataset used in this repository is from https://www.kaggle.com/c/digit-recognizer/data.
 
-HOG mean Histogram of Oriented Gradients. It generates a histogram of gradients of images edges.
+## MNIST Classification 
+One approach to perform MNIST classification is through HOG descriptors.
+
+HOG means Histogram of Oriented Gradients. It generates a histogram of gradients of images countours and edges.
 With this image descriptor we can compare images and check whether they are similar (same digit)
 or not.
 
-Machine learning algorithm takes many examples (train dataset) of digit image, digit label (the 
+Machine learning algorithm takes many examples (train dataset) of digit images, digit label (the 
 digit name) and the HOG descriptor of many samples and learn from it.
 
 After learning model is created, one can predict new digits label (values) from the test dataset.
@@ -14,29 +21,52 @@ After learning model is created, one can predict new digits label (values) from 
 Then we compare the real values with the predicted values. With these values we calculate accuracy.
 The table below shows the accuracy of each Machine Learning algorithm in this list:
 
--SVM - Support Vector Machine
--DTC - Decision Tree Classifier
--Random Forest - a set of decision trees split for better prediction
+ * SVM - Support Vector Machine
+ * DTC - Decision Tree Classifier
+ * Random Forest - a set of decision trees split for better prediction
+ * (to increase soon)
 
 And many different configurations of HOG descriptor with following parameters:
 
--Orientations
--Pixels Per Cell
--Cells Per Block
+ * Orientations
+ * Pixels Per Cell
+ * Cells Per Block
 
 As we can see, changing this parameters affects completely in accuracy.
 
 With this tool one can compare image based classifications based in HOG and find the best result to 
 train an actual model for its system and then predict.
 
+## Technical Stack
+* Python
+* sklearn
+
+## Usage
+```
+python3 eval_train_classify.py --dataset data/train.csv
+```
+
+After you selected your parameters, algorithm based in results of evaluation, you can train your dataset:
+```
+python3 train.py --dataset data/train.csv --model models/rf.cpickle
+```
+
+And classify the test vector:
+```
+python3 classify_mnist.py --model models/rf.cpickle --test data/test.csv
+```
+
+## Output from eval_train_classify.py (performance table)
 
 Train data shape (29399, 28, 28) Target shape (29399,)
 Unique elements in targets:  [0 1 2 3 4 5 6 7 8 9]
 Feature: HOG
  _______________________________________________________________________________________________
+
 |    ML Algo    | orientations  | pixelsPerCell | cellsPerBlock |     Score     |     Time      |
 |      SVM      |       2       |    (2, 2)     |    (1, 1)     |    0.5677     |    447.74     |
 |      DTC      |       2       |    (2, 2)     |    (1, 1)     |    0.8107     |    402.42     |
+
 | Random Forest |       2       |    (2, 2)     |    (1, 1)     |    0.9475     |    413.58     |
 |      SVM      |       2       |    (2, 2)     |    (2, 2)     |    0.7965     |    496.72     |
 |      DTC      |       2       |    (2, 2)     |    (2, 2)     |    0.8193     |    480.40     |

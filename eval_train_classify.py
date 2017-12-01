@@ -1,7 +1,7 @@
 # Evaluate ML for MNIST Kaggle
 #
 # USAGE
-# python3 eval_train_classify.py --dataset data/train_limpo.csv
+# python3 eval_train_classify.py --dataset data/train.csv
 
 # SVM
 from sklearn.externals import joblib
@@ -113,6 +113,8 @@ for i in intervalOrient:
 				# Create model
 				for image in digits_train:
 
+					# pre-process image here if needed
+
 					# describe the image and update the data matrix
 					hist = hog.describe(image)
 					data.append(hist)
@@ -132,6 +134,8 @@ for i in intervalOrient:
 
 				# Prepare images and calculates features (HOG)
 				for image in digits_test:
+
+					# pre-process image here if needed
 
 					# describe the image and update the data matrix
 					hist = hog.describe(image)			
