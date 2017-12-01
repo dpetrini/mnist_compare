@@ -61,6 +61,7 @@ python3 classify_mnist.py --model models/rf.cpickle --test data/test.csv
 Train data shape (29399, 28, 28) Target shape (29399,)
 Unique elements in targets:  [0 1 2 3 4 5 6 7 8 9]
 Feature: HOG
+#### Output
  _______________________________________________________________________________________________
 
 |    ML Algo    | orientations  | pixelsPerCell | cellsPerBlock |     Score     |     Time      |
