@@ -1,5 +1,5 @@
 # Compare descriptors and Machine Learning Algorithms
-Compare different HOG descriptor parameters and ML approaches for image classification.
+Tool to compare different HOG descriptor parameters and ML approaches for image classification.
 
 The python script __eval_train_classify.py__ perform following tasks:
  * read all dataset, split in train and test 
